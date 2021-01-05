@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Sign Lenguage</title>
+    
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
+    <style>
+
+        html {
+            overflow: scroll;
+        }
+
+        body {
+            overflow: hidden;
+            margin: 0px;
+        }
+
+        canvas {
+            display: block;
+            background: url('texture/sfondo.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .right {
+            position: fixed;
+            top: 40px;
+            right: 50px;
+            height: 100%;
+            width: 280px;
+        }
+
+        .left {
+            position: fixed;
+            top: 150px;
+            left: 50px;
+            height: 100%;
+            width: 280px;
+        }
+
+        .nam {
+            text-align: center;
+            color:blue;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            width: 200px;
+            height: 23px;
+            border: 2px solid  white;
+            border-radius: 10px;
+            background-color:white;
+            opacity:  1.0;
+        }
+        
+        .sur {
+            text-align: center;
+            color: purple;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            width: 200px;
+            height: 23px;
+            border: 2px solid  white;
+            border-radius: 10px;
+            background-color:white;
+            opacity:  1.0;
+        }
+
+        .btn {
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            border: white;
+            display:inline-block;
+            border-radius: 50px;
+            height: 62px;
+            width: 62px;
+            opacity: 1.0;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            background-color: rgb(57, 178, 235);
+            color: white;
+        }
+
+        .btn:active {
+            opacity: 1.0;
+            background-color: rgb(38, 146, 196);
+        }
+
+        .btnL {
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            border: white;
+            display:inline-block;
+            border-radius: 10px;
+            height: 30px;
+            width: 80px;
+            opacity: 1.0;
+        }
+
+        .btnL:hover {
+            opacity: 0.8;
+            background-color: rgb(57, 178, 235);
+            color: white;
+        }
+
+        .btnL:active {
+            opacity: 1.0;
+            background-color: rgb(38, 146, 196);
+        }
+
+        #slideV {
+            direction: rtl;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <script src="./build/three.js"></script>
+    <script src="./build/GLTFLoader.js"></script>
+    <script type = "text/javascript" src="Sounds.js"></script>  
+    <script type="module" src="final.js"></script> 
+
+    <section class="right">
+        <center>
+            <h3>
+            <font face="Georgia" size="4"> This hand will show you the name and/or the surname that you wish with the italian or american sign language. </font>
+            </h3>
+            <p></p>
+            <button class="btnL" id="BtnIta">Italian</button>
+            <button class="btnL" id="BtnAmer">American</button>
+            <p></p>
+            <input type='text' class="nam" id='TxtName' name='name' maxlength="30" placeholder="Enter your NAME"/>
+            <p></p>
+            <input type='text' class="sur" id='TxtSur' name='surname' maxlength="30" placeholder="Enter your SURNAME"/>
+            <p></p>
+            <button class="btn" id="BtnSend">Send</button>
+            <p></p>
+            <legend style="padding-bottom: 2px;"> Change Velocity </legend>
+            <input id="slideV" type="range" min="5" max="15" step="5" value="10" />
+            <p></p>
+            <legend style="padding-bottom: 2px;"> Volume </legend>
+            <input id="slideVol" type="range" min="0" max="10" step="1" value="5" />
+            <p></p>
+            <legend style="padding-bottom: 2px;"> Rotate Camera </legend>
+            <input id="slideC" type="range" min="-80" max="80" step="1" value="0" />
+        </center>
+    </section>
+
+    <section class="left">
+        <center>
+            <h1>
+                <font face="Georgia" size="6"> Interactive Graphics </font>
+            </h1>
+            <h2>
+                <font face="Georgia" size="4"> Rossi Sara 1751635 </font>
+            </h2>
+        </center>
+    </section>
+
+    <div id="container"></div>
+</body>
+    
+</html>
